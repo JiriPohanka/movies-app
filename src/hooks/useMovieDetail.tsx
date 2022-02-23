@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { SearchResult } from "../components/SearchResultsList"
+import VARS from "../VARS"
 
 const useMovieDetail = (movieId?: string) => {
 
@@ -9,10 +10,9 @@ const useMovieDetail = (movieId?: string) => {
 
         const doApiRequest = async () => {
             try {
-                const apiKey = '03b8572954325680265531140190fd2a'
                 const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?` +
                     new URLSearchParams({
-                        api_key: apiKey,
+                        api_key: VARS.tmdApiKey,
                         language: "en-US",
                         append_to_response: "credits"
                     }))

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { SearchResult } from "../components/SearchResultsList"
+import VARS from "../VARS"
 
 const useSearch = (query: string, pageNum: number = 1): SearchResult => {
 
@@ -16,9 +17,8 @@ const useSearch = (query: string, pageNum: number = 1): SearchResult => {
 
         const doApiRequest = async () => {
             try {
-                const apiKey = '03b8572954325680265531140190fd2a'
                 const response = await fetch('https://api.themoviedb.org/3/search/movie?' + new URLSearchParams({
-                    api_key: apiKey,
+                    api_key: VARS.tmdApiKey,
                     language: 'en-US',
                     query,
                     page: pageNum.toString(),
