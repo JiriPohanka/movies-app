@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/moovies-app/static/css/main.2c05d84e.css",
-    "main.js": "/moovies-app/static/js/main.1a7aafde.js",
-    "index.html": "/moovies-app/index.html",
-    "main.2c05d84e.css.map": "/moovies-app/static/css/main.2c05d84e.css.map",
-    "main.1a7aafde.js.map": "/moovies-app/static/js/main.1a7aafde.js.map"
+    "main.css": "/moovies/static/css/main.2c05d84e.css",
+    "main.js": "/moovies/static/js/main.5de5e976.js",
+    "index.html": "/moovies/index.html",
+    "main.2c05d84e.css.map": "/moovies/static/css/main.2c05d84e.css.map",
+    "main.5de5e976.js.map": "/moovies/static/js/main.5de5e976.js.map"
   },
   "entrypoints": [
     "static/css/main.2c05d84e.css",
-    "static/js/main.1a7aafde.js"
+    "static/js/main.5de5e976.js"
   ]
 }
