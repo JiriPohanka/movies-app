@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { H3 } from './utils/Typography'
 import ImgPlaceholder from './utils/ImgPlaceholder'
+import { Grid, Paper, Box, Typography } from '@mui/material'
 
-const StyledListItem = styled.div`
+const ItemBox = styled(Box)`
     display: flex;
     background-color: #f3f3f3;
     border-radius: 0.25rem;
@@ -44,22 +45,26 @@ const StyledLink = styled(Link)`
 const ResultItem = ({ data }: any) => {
 
     return (
-        <StyledListItem>
-            <StyledLink to={`/detail/${data.id}`}>
-                {data.poster_path ? <Img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} /> : <ImgPlaceholder width="100px" height="150px"><span>no image available</span></ImgPlaceholder>}
-            </StyledLink>
-            <StyledInfoBox>
-                <StyledLink to={`/detail/${data.id}`}>
-                    <H3>{data.title}<span>{` (${parseInt(data.release_date, 10)})`}</span></H3>
-                </StyledLink>
-                {data.overview
-                    ?
-                    <P>{data.overview.length <= 125 ? data.overview : data.overview.substring(0, 125) + '...'}</P>
-                    :
-                    <P>no description available</P>
-                }
-            </StyledInfoBox>
-        </StyledListItem>
+        <Grid item xs={12} sm={6} lg={4}>
+            <Paper elevation={0}>
+                <ItemBox>
+                    <StyledLink to={`/detail/${data.id}`}>
+                        {data.poster_path ? <Img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} /> : <ImgPlaceholder width="100px" height="150px"><span>no image available</span></ImgPlaceholder>}
+                    </StyledLink>
+                    <StyledInfoBox>
+                        <StyledLink to={`/detail/${data.id}`}>
+                            <Typography variant="h3">{data.title}<span>{` (${parseInt(data.release_date, 10)})`}</span></Typography>
+                        </StyledLink>
+                        {data.overview
+                            ?
+                            <P>{data.overview.length <= 115 ? data.overview : data.overview.substring(0, 115) + '...'}</P>
+                            :
+                            <P>no description available</P>
+                        }
+                    </StyledInfoBox>
+                </ItemBox>
+            </Paper>
+        </Grid>
     )
 }
 

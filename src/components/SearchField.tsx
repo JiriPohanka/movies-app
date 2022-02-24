@@ -1,29 +1,28 @@
-import styled from 'styled-components'
+import { styled } from '@mui/material/styles';
 import { selectQuery, setQuery } from '../redux/querySlice'
 import { setCurrentPage } from '../redux/currentPageSlice'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { useRef } from "react"
+import { ChangeEvent } from "react"
+import TextField from '@mui/material/TextField';
 
-const Input = styled.input`
-    padding: 1rem;
+const Input = styled(TextField)`
     font-size: 1.25rem;
-    margin: 1rem 0 1rem 0;
+    margin: 2rem 0 2rem 0;
 `
 
-const SearchField = (props: any) => {
+const SearchField = () => {
 
-    const inputEl = useRef<HTMLInputElement>(null)
     const dispatch = useAppDispatch()
     const query = useAppSelector(selectQuery)
 
-    const handleChange = () => {
-        dispatch(setQuery(inputEl?.current?.value ?? ""))
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        dispatch(setQuery(event.target.value))
         dispatch(setCurrentPage(1))
     }
 
     return (
         <div>
-            <Input ref={inputEl} value={query} onChange={handleChange} />
+            <Input variant="outlined" value={query} onChange={handleChange} />
         </div>
     )
 }

@@ -5,22 +5,7 @@ import ResultItem from "./ResultItem"
 import { useAppSelector } from '../hooks/redux'
 import { selectSearchResult } from '../redux/searchResultSlice'
 import { selectQuery } from '../redux/querySlice'
-
-const ResponsiveGrid = styled.div`
-    display: grid;
-    margin: 0 0.25rem;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    gap: 0.25rem 0.25rem;
-
-    @media only screen and (min-width: 700px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @media only screen and (min-width: 1100px) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }   
-`
+import { Grid } from '@mui/material'
 export interface SearchResult {
     data: MovieObject[]
     loading: boolean
@@ -89,9 +74,9 @@ const SearchResultsList = (props: any) => {
 
     return (
         <>
-            <ResponsiveGrid>
+            <Grid container spacing={2}>
                 {searchResult.loading ? <Spinner /> : namesList}
-            </ResponsiveGrid>
+            </Grid>
             <Paginator maxPages={searchResult.totalPages} />
         </>
     )

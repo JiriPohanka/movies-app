@@ -33,13 +33,13 @@ const useMovieDetail = (movieId?: string) => {
                 }
             }
             catch (er) {
+                // in case of loss of internet connection
+                setMovieInfo({ data: [], error: true, loading: false })
                 console.error("failed to fetch movie detail (useMovieDetail): ", er)
             }
         }
 
-        setMovieInfo({ data: [], error: false, loading: true })
         setTimeout(() => doApiRequest(), 200)
-        // doApiRequest()
 
     }, [movieId])
 
