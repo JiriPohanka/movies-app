@@ -9,7 +9,7 @@ interface SearchResultState {
 
 // Define the initial state using that type
 const initialState: SearchResultState = {
-    value: { data: [], loading: true, error: false }
+    value: { data: [], query: "", currPage: 1, loading: true, error: false, timestamp: (new Date()).getTime() }
 }
 
 export const searchResultSlice = createSlice({

@@ -10,19 +10,6 @@ import { selectCurrentPage } from "./redux/currentPageSlice";
 
 function App() {
 
-  // get state from redux store
-  const query = useAppSelector(selectQuery)
-  const currPage = useAppSelector(selectCurrentPage)
-
-  // fetch data
-  let data = useSearch(query, currPage)
-
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(setSearchResult(data))
-  })
-
   return (
     <BrowserRouter>
       <Routes>

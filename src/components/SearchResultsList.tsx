@@ -10,7 +10,16 @@ export interface SearchResult {
     data: MovieObject[]
     loading: boolean
     error: boolean
+    timestamp: number
+    currPage: number
+    query: string
     totalPages?: number
+}
+
+export interface MovieFetchResult {
+    data?: MovieObject
+    loading: boolean
+    error: boolean
 }
 export interface MovieObject {
     id: string

@@ -94,7 +94,7 @@ const Detail = (props: any) => {
     const result = useMovieDetail(movieId)
 
     useEffect(() => {
-        setMovieData(result.data[0])
+        setMovieData(result.data)
     })
 
     if (result.loading) {

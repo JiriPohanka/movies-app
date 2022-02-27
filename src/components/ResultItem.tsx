@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { H3 } from './utils/Typography'
 import ImgPlaceholder from './utils/ImgPlaceholder'
 import { Grid, Paper, Box, Typography } from '@mui/material'
 

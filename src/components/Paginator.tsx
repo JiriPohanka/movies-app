@@ -16,6 +16,7 @@ const Paginator = ({ maxPages }: Props) => {
 
     const setPage = (event: ChangeEvent<unknown>, value: number) => {
         dispatch(setCurrentPage(value))
+        console.log(value)
     }
 
     return (
