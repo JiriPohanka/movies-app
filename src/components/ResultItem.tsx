@@ -40,7 +40,6 @@ const StyledLink = styled(Link)`
     max-height: 150px;
 `
 
-
 const ResultItem = ({ data }: any) => {
 
     return (

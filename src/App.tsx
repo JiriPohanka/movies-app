@@ -1,12 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./hooks/redux";
-import { selectQuery } from "./redux/querySlice";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
-import { setSearchResult } from "./redux/searchResultSlice";
-import useSearch from "./hooks/useSearch";
-import { selectCurrentPage } from "./redux/currentPageSlice";
 
 function App() {
 

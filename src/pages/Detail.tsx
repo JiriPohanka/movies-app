@@ -98,9 +98,7 @@ const Detail = (props: any) => {
     })
 
     if (result.loading) {
-        return (
-            <Spinner />
-        )
+        return <Spinner />
     }
 
     if (result.error || movieData === undefined) {
